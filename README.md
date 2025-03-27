@@ -18,6 +18,7 @@
    * `#PBS -q queue_name` (sets the queue for the scheduled job to queue_name)
        * For casper, use the `casper` queue
        * For derecho, use the `main` queue for most jobs (this charges for usage of a full node even if only a part of it is requested)
+           * Generally use `#PBS -l job_priority=regular` (1x charge) or  `#PBS -l job_priority=economy` (0.7x charge)
        * For jobs on derecho using few resources, could use `develop` queue (only charges for what is used, but has resource limitations)
    * `#PBS -A project_code` (sets the project code to project_code, for this class this is UCOR0090). This charges the core hours to the correct project.
    * `#PBS -l select=[num_nodes]:ncpus=[num_cpus]:mpiprocs=[num_mpiprocs]:ngpus=[num_gpus]:mem=[reqd_mem]` (sets requested resources)
