@@ -1,6 +1,9 @@
 
 # Guide to using NCAR HPC systems
 
+Most information from class discussions, assignment instructions, and [NCAR HPC Documentation (n.d.). University Corporation for Atmospheric Research. Retrieved March 27, 2025, from https://ncar-hpc-docs.readthedocs.io/en/latest/ ]
+
+
 ### Logging in to Derecho and Casper:
 
 1) Open a terminal window
@@ -14,7 +17,7 @@
 2) Edit the file by typing "i" to begin editing in vim, [esc] to end editing, ":wq" to quit and save, ":q" to quit without saving
 3) Add a header for the file to specify shell (e.g. `#!/bin/tcsh`)
 4) Set up the PBS variables:
-   * `# PBS -N jobname` (sets the name of the job to be scheduled/run to "jobname")
+   * `#PBS -N jobname` (sets the name of the job to be scheduled/run to "jobname")
    * `#PBS -q queue_name` (sets the queue for the scheduled job to queue_name)
        * For casper, use the `casper` queue
        * For derecho, use the `main` queue for most jobs (this charges for usage of a full node even if only a part of it is requested)
