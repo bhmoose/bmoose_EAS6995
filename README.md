@@ -27,7 +27,7 @@
        *[Still need to learn more about what MPI processes are and the meaning of requesting them]
        * Requests reqd_mem RAM
    * `#PBS -l walltime=hh:mm:ss` (requests hh hours, mm minutes, ss seconds of wallclock time for the job. If time exceeded, will stop job execution)
-   * `#PBS -j oe` (combines output and error files)
+   * `#PBS -j oe` (combines output and error files, if not included the run will produce a separate file for output and errors)
 5) If submitting a job that is a python file, add the following lines:
    * `module load conda` (loads conda module so that environments can be loaded)
    * `conda activate env_name` (activates a conda environment called env_name)
