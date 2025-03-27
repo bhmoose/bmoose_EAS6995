@@ -27,7 +27,7 @@ Most information from class discussions, assignment instructions, and [NCAR HPC 
    * `#PBS -l select=[num_nodes]:ncpus=[num_cpus]:mpiprocs=[num_mpiprocs]:ngpus=[num_gpus]:mem=[reqd_mem]` (sets requested resources)
        * Requests num_nodes nodes
        * For each node, requests num_cpus CPU cores, num_gpus GPUs
-       *[Still need to learn more about what MPI processes are and the meaning of requesting them]
+       * Still need to learn more about what MPI processes are and the meaning of requesting them
        * Requests reqd_mem RAM
    * `#PBS -l walltime=hh:mm:ss` (requests hh hours, mm minutes, ss seconds of wallclock time for the job. If time exceeded, will stop job execution)
    * `#PBS -j oe` (combines output and error files, if not included the run will produce a separate file for output and errors)
