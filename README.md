@@ -24,8 +24,8 @@
    * `#PBS -l select=[num_nodes]:ncpus=[num_cpus]:mpiprocs=[num_mpiprocs]:ngpus=[num_gpus]:mem=[reqd_mem]` (sets requested resources)
        * Requests num_nodes nodes
        * For each node, requests num_cpus CPU cores, num_gpus GPUs
-       * Requests num_mpiprocs MPI processes
-       * Requests reqd_mem memory
+       *[Still need to learn more about what MPI processes are and the meaning of requesting them]
+       * Requests reqd_mem RAM
    * `#PBS -l walltime=hh:mm:ss` (requests hh hours, mm minutes, ss seconds of wallclock time for the job. If time exceeded, will stop job execution)
    * `#PBS -j oe` (combines output and error files)
 5) If submitting a job that is a python file, add the following lines:
