@@ -13,9 +13,9 @@ Most information from class discussions, assignment instructions, and [NCAR HPC 
 
 ### Creating a job script
 
-1) Open a new shell file by using `vim filename.pbs`
+1) Open a new script file by using `vim filename.pbs`
 2) Edit the file by typing "i" to begin editing in vim, [esc] to end editing, ":wq" to quit and save, ":q" to quit without saving
-3) Add a header for the file to specify shell (e.g. `#!/bin/tcsh`)
+3) Add a header for the file (e.g. `#!/bin/tcsh`)
 4) Set up the PBS variables:
    * `#PBS -N jobname` (sets the name of the job to be scheduled/run to "jobname")
    * `#PBS -q queue_name` (sets the queue for the scheduled job to queue_name)
