@@ -57,9 +57,13 @@ To check core hours used, log in to the UCAR Systems Accounting Manager (SAM) at
 
 * Ensure at least one GPU is requested in the resource request within the job script or interactive session (`-l select=n_nodes:ncpus=n_cpus:ngpus=n_gpus` for interactive session, add `#PBS` before it for submitted job).
 
-* Adjust the model code to run on GPUs:
+* Adjust the model code to run on GPUs
 
-    * Fkrst, verify that CUDA recognizes that a GPU is available
+    * Note: these steps were determined from the rnn_with_cuda example provided on Canvas.
+
+    * First, verify that CUDA recognizes that a GPU is available, then set the device to "cuda" via PyTorch (as in first few lines of provided rnn_with_cuda example code)
+ 
+    * Then, move the model/module object to the GPU with `[model].to_device(device_object)` where device_object stores the GPU device object.
    
    
     
