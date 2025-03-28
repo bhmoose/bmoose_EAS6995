@@ -3,7 +3,6 @@
 
 Most information from class discussions, assignment instructions, and [NCAR HPC Documentation (n.d.). University Corporation for Atmospheric Research. Retrieved March 27, 2025, from https://ncar-hpc-docs.readthedocs.io/en/latest/ ]
 
-
 ### Logging in to Derecho and Casper:
 
 1) Open a terminal window
@@ -52,7 +51,15 @@ JupyterHub allows you to connect to a Casper login node and run code (usually an
 To check core hours used, log in to the UCAR Systems Accounting Manager (SAM) at [sam.ucar.edu](sam.ucar.edu). There is a lag of about 1 day, so core hours charged to a project do not appear on SAM until a day or so after they have been used.
 
 
+### Running programs (such as DL model training) on GPU
 
+* Can run in an interactive session with `qsub -I` followed by appropriate arguments (same as in a job script, except NCAR documentation uses `casper@casper-pbs` as queue name.
+
+* Ensure at least one GPU is requested in the resource request within the job script or interactive session (`-l select=n_nodes:ncpus=n_cpus:ngpus=n_gpus` for interactive session, add `#PBS` before it for submitted job).
+
+* Adjust the model code to run on GPUs:
+
+    * Fkrst, verify that CUDA recognizes that a GPU is available
    
    
     
