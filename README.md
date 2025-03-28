@@ -53,6 +53,8 @@ To check core hours used, log in to the UCAR Systems Accounting Manager (SAM) at
 
 ### Running programs (such as DL model training) on GPU
 
+* Note: As of the end of class on Thursday, I was not able to get the RNN to train on Casper (with GPUs) substantially faster than on my laptop. Also, running with 8 GPUs did not clearly improve performance relative to 1 GPU. There are probably some steps I am missing that would improve training speed on the NCAR HPC systems.
+
 * Can run in an interactive session with `qsub -I` followed by appropriate arguments (same as in a job script, except NCAR documentation uses `casper@casper-pbs` as queue name.
 
 * Ensure at least one GPU is requested in the resource request within the job script or interactive session (`-l select=n_nodes:ncpus=n_cpus:ngpus=n_gpus` for interactive session, add `#PBS` before it for submitted job).
@@ -64,6 +66,8 @@ To check core hours used, log in to the UCAR Systems Accounting Manager (SAM) at
     * First, verify that CUDA recognizes that a GPU is available, then set the device to "cuda" via PyTorch (as in first few lines of provided rnn_with_cuda example code)
  
     * Then, move the model/module object to the GPU with `[model].to_device(device_object)` where device_object stores the GPU device object.
+ 
+    * Move the tensors used for model training, loss computation, and input to the GPU by specifying `device=device_object` when initializing these tensors, as in the rnn_with_cuda example code.
    
    
     
