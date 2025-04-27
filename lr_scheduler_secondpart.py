@@ -95,7 +95,7 @@ class CosineAnnealing:
             return self.max_lr * np.cos((math.pi / 2) * ((step - self.warmup) / (self.total_steps - self.warmup))) + 1e-6
 
 # Training loop
-def train_model(scheduler_type, epochs=50, model_size=512, factor=56.29):
+def train_model(scheduler_type, epochs=50, model_size=512, factor=30.62):
     trainloader, testloader = get_fashion_mnist(128*4)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = SimpleCNN().to(device)
@@ -172,7 +172,7 @@ def train_model(scheduler_type, epochs=50, model_size=512, factor=56.29):
 # Run and Plot
 if __name__ == '__main__':
     noam_results = train_model(scheduler_type='noam', epochs=50)
-    cosine_results = train_model(scheduler_type='cosine', epochs=50)
+    # cosine_results = train_model(scheduler_type='cosine', epochs=50)
 
     def plot_results(train_loss_eachiter, train_loss, val_loss, train_acc, val_acc, lr_values, title_suffix):
         fig, ax = plt.subplots(3, 1, figsize=(10, 17))
@@ -205,4 +205,4 @@ if __name__ == '__main__':
 
 
     plot_results(*noam_results, title_suffix='Noam')
-    plot_results(*cosine_results, title_suffix='CosineAnnealing')
+    #plot_results(*cosine_results, title_suffix='CosineAnnealing')
